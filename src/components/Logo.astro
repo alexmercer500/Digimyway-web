@@ -1,0 +1,36 @@
+---
+import { site } from '@/config/site';
+
+interface Props {
+  /** "dark" for light backgrounds, "light" for the navy band. */
+  variant?: 'dark' | 'light';
+}
+
+const { variant = 'dark' } = Astro.props;
+const wordmark = variant === 'light' ? 'text-white' : 'text-ink-900';
+const sub = variant === 'light' ? 'text-white/60' : 'text-ink-500';
+---
+
+<a href="/" class="group flex items-center gap-3" aria-label={`${site.name} home`}>
+  <span
+    class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-lg shadow-brand-500/30 transition-transform group-hover:scale-105"
+  >
+    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-ink-950" aria-hidden="true">
+      <rect x="6" y="2.5" width="12" height="19" rx="3" stroke="currentColor" stroke-width="1.8" />
+      <path d="M10.5 5.25h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      <path
+        d="M8.75 13.2l1.9 1.9 3.6-3.8"
+        stroke="currentColor"
+        stroke-width="1.9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+  <span class="flex flex-col leading-none">
+    <span class={`font-display text-lg font-extrabold tracking-tight ${wordmark}`}>
+      Digi<span class="text-brand-500">MyWay</span>
+    </span>
+    <span class={`mt-0.5 text-[11px] font-medium ${sub}`}>Device repair, your way</span>
+  </span>
+</a>

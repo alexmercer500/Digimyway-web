@@ -1,0 +1,25 @@
+---
+import { site } from '@/config/site';
+---
+
+<div class="border-b border-brand-600/30 bg-brand-500 text-ink-950">
+  <div class="mx-auto flex w-full max-w-6xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:px-6 lg:px-8">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="hidden h-4 w-4 shrink-0 sm:block"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 8h.01M11 12h1v4h1" />
+    </svg>
+    <p class="text-xs font-medium leading-snug sm:text-sm">
+      {site.name} is under active development — the app and its services are still being built and
+      are not live yet.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+---
+import LegalLayout from '@/layouts/LegalLayout.astro';
+import { site } from '@/config/site';
+
+const { entity } = site.legal;
+---
+
+<LegalLayout
+  eyebrow="Legal"
+  title="Privacy Policy"
+  subtitle={`How ${site.name} collects, uses, shares and protects your personal information.`}
+>
+  <p>
+    This Privacy Policy explains how {entity} ("{site.name}", "we", "us" or "our") collects, uses,
+    discloses and safeguards your personal information when you use the {site.name} website, mobile
+    applications and related services (the "Platform"). By using the Platform, you consent to the
+    practices described in this policy.
+  </p>
+
+  <h2>1. Information we collect</h2>
+  <h3>Information you provide</h3>
+  <ul>
+    <li><strong>Account details:</strong> your mobile number, name, email address and profile
+      preferences.</li>
+    <li><strong>Repair information:</strong> device brand and model, the fault you report, uploaded
+      photos, your address or approximate location, and any notes you add.</li>
+    <li><strong>Transaction details:</strong> quotes accepted, bookings and payment status.</li>
+    <li><strong>Support communications:</strong> messages you send to our support team.</li>
+  </ul>
+  <h3>Information collected automatically</h3>
+  <ul>
+    <li>Device and usage information such as IP address, browser/app type, operating system and
+      pages or screens viewed.</li>
+    <li>Approximate location derived from your IP address, or precise location where you grant
+      permission, to find technicians near you.</li>
+    <li>Cookies and similar technologies used to operate and improve the Platform.</li>
+  </ul>
+
+  <h2>2. How we use your information</h2>
+  <ul>
+    <li>To create and manage your account and authenticate you via one-time passwords.</li>
+    <li>To broadcast repair requests to nearby technicians and present their quotes to you.</li>
+    <li>To facilitate bookings, payments, invoices and warranty records.</li>
+    <li>To provide customer support and resolve disputes.</li>
+    <li>To send service-related notifications and, where permitted, promotional messages.</li>
+    <li>To detect, prevent and address fraud, abuse and security incidents.</li>
+    <li>To comply with legal, tax and regulatory obligations.</li>
+  </ul>
+
+  <h2>3. Legal basis and consent</h2>
+  <p>
+    We process personal information on the basis of your consent, to perform our contract with you,
+    to comply with legal obligations, and for our legitimate business interests. Where processing is
+    based on consent, you may withdraw it at any time, though this may limit your ability to use
+    certain features.
+  </p>
+
+  <h2>4. Sharing your information</h2>
+  <p>We may share your information with:</p>
+  <ul>
+    <li><strong>Technicians:</strong> when you book a repair, the relevant Technician receives the
+      details needed to perform it, such as your name, contact number and device details. Contact
+      details are shared on a need-to-know basis.</li>
+    <li><strong>Payment service providers:</strong> to process payments securely. We do not store
+      your full card or bank credentials on our servers.</li>
+    <li><strong>Service providers:</strong> vendors that help us operate the Platform, including
+      cloud hosting, communications and analytics providers, under confidentiality obligations.</li>
+    <li><strong>Authorities:</strong> where required by law or to protect our rights, users or the
+      public.</li>
+  </ul>
+  <p>We do not sell your personal information to third parties.</p>
+
+  <h2>5. Payment information</h2>
+  <p>
+    Payments are processed by regulated third-party payment gateways. When you pay, your payment
+    details are provided directly to the gateway, which handles them under its own security and
+    privacy standards. We receive only the information necessary to confirm the transaction, such
+    as the payment status and an order or transaction identifier.
+  </p>
+
+  <h2>6. Cookies and tracking</h2>
+  <p>
+    We use cookies and similar technologies to keep you signed in, remember preferences, measure
+    traffic and improve the Platform. You can control cookies through your browser or device
+    settings, but disabling them may affect functionality.
+  </p>
+
+  <h2>7. Data retention</h2>
+  <p>
+    We retain personal information for as long as necessary to provide the Platform, comply with our
+    legal and regulatory obligations, resolve disputes and enforce our agreements. When no longer
+    needed, information is deleted or anonymised in accordance with applicable law.
+  </p>
+
+  <h2>8. Security</h2>
+  <p>
+    We use reasonable technical and organisational measures to protect your information, including
+    encryption in transit, access controls and secure infrastructure. However, no method of
+    transmission or storage is completely secure, and we cannot guarantee absolute security.
+  </p>
+
+  <h2>9. Your rights</h2>
+  <p>Subject to applicable law, you may have the right to:</p>
+  <ul>
+    <li>Access the personal information we hold about you.</li>
+    <li>Request correction of inaccurate or incomplete information.</li>
+    <li>Request deletion of your information, where we are not required to retain it.</li>
+    <li>Withdraw consent or object to certain processing.</li>
+    <li>Lodge a complaint with the relevant data-protection authority.</li>
+  </ul>
+  <p>
+    To exercise any of these rights, contact us using the details in section 13 below.
+  </p>
+
+  <h2>10. Children's privacy</h2>
+  <p>
+    The Platform is not intended for use by persons under 18 years of age. We do not knowingly
+    collect personal information from children. If you believe a child has provided us with
+    information, please contact us so we can take appropriate action.
+  </p>
+
+  <h2>11. Third-party links</h2>
+  <p>
+    The Platform may contain links to third-party websites or services. We are not responsible for
+    the privacy practices or content of those third parties, and we encourage you to review their
+    policies.
+  </p>
+
+  <h2>12. Changes to this policy</h2>
+  <p>
+    We may update this Privacy Policy from time to time. Material changes will be reflected by an
+    updated "Last updated" date. Your continued use of the Platform after changes are posted
+    constitutes acceptance of the revised policy.
+  </p>
+
+  <h2>13. Contact and grievance officer</h2>
+  <p>
+    For questions, requests or complaints about this Privacy Policy or your personal information,
+    please contact our grievance officer:
+  </p>
+  <ul>
+    <li><strong>Entity:</strong> {entity}</li>
+    <li><strong>Email:</strong> <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></li>
+    <li><strong>Phone:</strong> {site.contact.phone}</li>
+    <li><strong>Address:</strong> {site.legal.address.line1}, {site.legal.address.locality},
+      {site.legal.address.region} {site.legal.address.postalCode}, {site.legal.address.country}</li>
+  </ul>
+</LegalLayout>

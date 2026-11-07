@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+/*
+ * DigiMyWay design tokens.
+ *
+ * Tailwind 4 reads `@theme` at build time and turns every entry into a utility
+ * (`--color-brand-500` -> `bg-brand-500`, `text-brand-500`, ...). The palette
+ * mirrors the product's mobile/web design system so the marketing site and the
+ * app share one brand ramp: an orange primary on a slate/ink neutral scale,
+ * with a deep navy "canvas" for the dark hero band.
+ */
+@theme {
+  /* Brand ramp — orange. */
+  --color-brand-50: #fff8e6;
+  --color-brand-100: #ffefc2;
+  --color-brand-200: #ffe199;
+  --color-brand-300: #ffd166;
+  --color-brand-400: #ffbb33;
+  --color-brand-500: #ffa500;
+  --color-brand-600: #e08f00;
+  --color-brand-700: #b36f00;
+  --color-brand-800: #8a5600;
+  --color-brand-900: #643e00;
+
+  /* Ink — slate neutrals for text and surfaces. */
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+  --color-ink-950: #020617;
+
+  /* Deep navy used by the hero band and footer. */
+  --color-canvas: #0b1220;
+  --color-canvas-deep: #070d18;
+
+  /* Supporting accents. */
+  --color-verified-500: #10b981;
+  --color-verified-600: #059669;
+  --color-azure-500: #0ea5e9;
+  --color-amber-500: #f59e0b;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Plus Jakarta Sans Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  --shadow-soft: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 8px 24px -12px rgb(15 23 42 / 0.12);
+  --shadow-lift: 0 2px 4px 0 rgb(15 23 42 / 0.05), 0 18px 40px -20px rgb(15 23 42 / 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #ffffff;
+    color: var(--color-ink-800);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: var(--color-ink-900);
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-ink-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* Utility: a soft grid + glow backdrop for the dark hero band. */
+@utility hero-backdrop {
+  background:
+    radial-gradient(60% 55% at 15% 0%, rgb(255 165 0 / 0.22) 0%, transparent 60%),
+    radial-gradient(50% 50% at 100% 10%, rgb(14 165 233 / 0.16) 0%, transparent 55%),
+    linear-gradient(180deg, #0b1220 0%, #0b1220 55%, #0d1626 100%);
+}
+
+/* Legal-document typography applied to the prose wrapper on policy pages. */
+@utility legal-prose {
+  & h2 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.3125rem;
+    font-weight: 700;
+  }
+
+  & h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+  }
+
+  & p,
+  & li {
+    color: var(--color-ink-600);
+    line-height: 1.75;
+  }
+
+  & p {
+    margin-bottom: 1rem;
+  }
+
+  & ul,
+  & ol {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  & ul {
+    list-style: disc;
+  }
+
+  & ol {
+    list-style: decimal;
+  }
+
+  & a {
+    color: var(--color-brand-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  & strong {
+    color: var(--color-ink-800);
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,110 @@
+---
+import LegalLayout from '@/layouts/LegalLayout.astro';
+import { site } from '@/config/site';
+
+const { entity } = site.legal;
+---
+
+<LegalLayout
+  eyebrow="Legal"
+  title="Refund & Cancellation Policy"
+  subtitle={`When you can cancel a booking and how refunds are processed on ${site.name}.`}
+>
+  <p>
+    This Refund &amp; Cancellation Policy applies to all bookings and payments made through the
+    {site.name} platform, operated by {entity}. It should be read together with our
+    <a href="/terms">Terms &amp; Conditions</a>.
+  </p>
+
+  <h2>1. Overview</h2>
+  <p>
+    {site.name} connects you with independent repair technicians. The amount you pay is collected
+    through a secure payment gateway and is released to the technician in accordance with the
+    applicable escrow and settlement rules. This policy explains your rights to cancel a booking and
+    to obtain a refund.
+  </p>
+
+  <h2>2. Cancellation policy</h2>
+  <h3>Before handing over your device</h3>
+  <ul>
+    <li>You may cancel a booking free of charge at any time before you hand the device to the
+      technician.</li>
+    <li>Any amount already collected for the repair will be refunded in full.</li>
+  </ul>
+  <h3>After handing over your device</h3>
+  <ul>
+    <li>Once the device is with the technician, cancellation is treated as a dispute and may be
+      subject to a fee to cover any diagnosis, handling or part costs already incurred.</li>
+    <li>If work has already begun, you will be charged for the work completed and any parts used up
+      to the point of cancellation.</li>
+  </ul>
+
+  <h2>3. Refund eligibility</h2>
+  <p>You may be eligible for a refund where:</p>
+  <ul>
+    <li>The repair was not performed and the device was not handed over.</li>
+    <li>The payment was collected but the technician failed to complete the agreed repair.</li>
+    <li>You were charged more than the price you accepted for the repair, without your approval for
+      a revised quote.</li>
+    <li>A duplicate or erroneous payment was made.</li>
+    <li>The repair fails and a valid warranty claim is upheld, and the technician is unable to
+      remedy the fault.</li>
+  </ul>
+
+  <h2>4. Escrow-protected payments</h2>
+  <p>
+    Where your payment is held securely and released to the technician only after you confirm the
+    repair, a refund of the held amount is processed if you validly cancel before confirmation. Once
+    you have inspected the device and confirmed the repair, the amount is released and refunds are
+    handled under the warranty and dispute process instead.
+  </p>
+
+  <h2>5. Non-refundable situations</h2>
+  <p>Refunds will generally not be issued where:</p>
+  <ul>
+    <li>The repair was completed to the agreed specification and you confirmed it.</li>
+    <li>The fault is caused by new damage, misuse or a separate issue unrelated to the repair
+      performed.</li>
+    <li>The device was found to have pre-existing faults that were disclosed to you and approved.</li>
+    <li>You provided incorrect device information that led to a different repair being required.</li>
+  </ul>
+
+  <h2>6. Warranty claims</h2>
+  <p>
+    If a repair develops a fault within the stated warranty period, contact us with the booking
+    reference and details of the issue. The technician will be given the opportunity to inspect and
+    remedy the fault. If it cannot be remedied, a refund or partial refund may be issued at our
+    reasonable discretion, subject to inspection.
+  </p>
+
+  <h2>7. How to request a refund</h2>
+  <ol>
+    <li>Raise the request from your booking in the app, or contact support by email or phone.</li>
+    <li>Provide your booking or order reference, the reason for the request and any supporting
+      photos or details.</li>
+    <li>Our team will review the request, and may contact you or the technician for further
+      information.</li>
+  </ol>
+
+  <h2>8. Processing time</h2>
+  <p>
+    Approved refunds are initiated to the original payment method after approval. The time taken for
+    the amount to reflect in your account depends on your bank or payment provider and is outside our
+    control.
+  </p>
+
+  <h2>9. Chargebacks</h2>
+  <p>
+    We encourage you to contact us before initiating a chargeback with your bank, as most issues can
+    be resolved quickly through our support team. Fraudulent or abusive chargebacks may result in
+    suspension of your account.
+  </p>
+
+  <h2>10. Contact us</h2>
+  <p>
+    For any questions about cancellations or refunds, contact {entity} at
+    <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> or {site.contact.phone}, or
+    write to us at {site.legal.address.line1}, {site.legal.address.locality},
+    {site.legal.address.region} {site.legal.address.postalCode}, {site.legal.address.country}.
+  </p>
+</LegalLayout>

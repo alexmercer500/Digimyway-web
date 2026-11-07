@@ -1,0 +1,344 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/Icon.astro';
+import { site } from '@/config/site';
+
+const features = [
+  {
+    icon: 'search',
+    title: 'Live, competitive quotes',
+    body: 'Describe the fault once and verified technicians nearby bid live on your job, so you see the true market price before you commit.',
+  },
+  {
+    icon: 'shield',
+    title: 'Verified repair partners',
+    body: 'Every workshop is KYC-verified with a geotagged storefront before it can quote, keeping counterfeit parts and ghost shops out.',
+  },
+  {
+    icon: 'card',
+    title: 'Pay only after you verify',
+    body: 'Your money is held securely and released only once you have physically inspected the device and confirmed the repair.',
+  },
+  {
+    icon: 'pin',
+    title: 'Nearby, ranked by distance',
+    body: 'See certified benches around you, ranked by distance, rating and price — with doorstep pickup available on selected repairs.',
+  },
+  {
+    icon: 'refresh',
+    title: 'Warranty on every part',
+    body: 'Each quote names its part tier — Original, OEM or Compatible — with a warranty issued against the exact part fitted.',
+  },
+  {
+    icon: 'chat',
+    title: 'Live tracking & support',
+    body: 'Follow every repair step in real time and reach our support desk by chat, phone or email.',
+  },
+];
+
+const steps = [
+  {
+    step: '01',
+    title: 'Describe the problem',
+    body: 'Tell us what is wrong — a cracked screen, a failing battery, water damage — in your own words or with a photo.',
+  },
+  {
+    step: '02',
+    title: 'Get live quotes',
+    body: 'We broadcast your request to verified technicians nearby. Their bids stream in for you to compare side by side.',
+  },
+  {
+    step: '03',
+    title: 'Book a repair',
+    body: 'Pick the price, the part grade and the turnaround that suits you, then hand over your device at a verified bench.',
+  },
+  {
+    step: '04',
+    title: 'Verify & pay',
+    body: 'Inspect the finished repair, confirm the work, and release payment. Your warranty is issued against the part fitted.',
+  },
+];
+
+const benefits = [
+  'Escrow-protected payments — never pay in advance',
+  'Transparent pricing with no hidden counter markups',
+  'Certified technicians and genuine part grades',
+  'Real-time repair tracking from booking to handover',
+  'Warranty enforced on the exact part replaced',
+  'Support desk available by chat, phone and email',
+];
+
+const stats = [
+  { value: '10 km', label: 'Verified technician search radius' },
+  { value: '3', label: 'Part grades — Original, OEM, Compatible' },
+  { value: '6 months', label: 'Escrow-backed warranty window' },
+  { value: 'Free', label: 'To compare quotes and book a repair' },
+];
+
+const faqs = [
+  {
+    q: 'How much does DigiMyWay cost to use?',
+    a: 'There is no charge to browse, compare quotes or book a repair. You pay only the price you accepted for the repair itself.',
+  },
+  {
+    q: 'When am I charged for a repair?',
+    a: 'Never in advance. Payment is released only after you physically inspect the device and confirm the completed repair at the bench.',
+  },
+  {
+    q: 'What does the warranty cover?',
+    a: 'Each quote states its own warranty period against the part that was fitted. The warranty is issued by the technician and backed by our escrow protection.',
+  },
+  {
+    q: 'How do the live bids work?',
+    a: 'Your request is broadcast to verified technicians within your area. Each one responds with one or more tiered quotes, and the board ranks them by price, distance and turnaround as they arrive.',
+  },
+  {
+    q: 'Can I cancel a booking?',
+    a: 'Yes. You can cancel free of charge until you hand the device over. Once the device is with the technician, cancellation is handled as a dispute under our refund policy.',
+  },
+  {
+    q: 'Is my data safe with the technician?',
+    a: 'Technicians are verification-checked and bound by our data policy. For repairs that require the device to power on, we recommend backing up your data and switching off screen locks after collection.',
+  },
+];
+---
+
+<BaseLayout title="Device repair, your way" description={site.description}>
+  <!-- Hero -->
+  <section class="hero-backdrop">
+    <div class="mx-auto grid w-full max-w-6xl gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:px-8">
+      <div>
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-300"
+        >
+          <Icon name="zap" class="h-3.5 w-3.5" />
+          Live repair bidding
+        </span>
+        <h1 class="mt-5 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Device repair,<br class="hidden sm:block" />
+          <span class="text-brand-400">the smarter way.</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink-300">
+          Describe the fault once. Verified technicians near you bid live on your repair, and you
+          choose the price, the part grade and the turnaround — paying only after you verify the work.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-base font-semibold text-ink-950 transition-colors hover:bg-brand-400"
+          >
+            Get started
+            <Icon name="arrow" class="h-5 w-5" />
+          </a>
+          <a
+            href="/#how-it-works"
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
+          >
+            See how it works
+          </a>
+        </div>
+
+        <dl class="mt-12 grid max-w-lg grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-2">
+          {
+            stats.slice(0, 2).map((stat) => (
+              <div>
+                <dt class="font-display text-2xl font-extrabold text-white">{stat.value}</dt>
+                <dd class="mt-1 text-sm text-ink-400">{stat.label}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+
+      <!-- Illustrative quote cards -->
+      <div class="relative">
+        <div class="absolute -inset-6 rounded-[2.5rem] bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
+        <div class="relative space-y-4 rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold text-white">Screen replacement · iPhone 14</p>
+            <span class="rounded-full bg-verified-500/15 px-2.5 py-1 text-xs font-semibold text-verified-500">
+              10 verifying
+            </span>
+          </div>
+          {
+            [
+              { shop: 'Hi-Tech Mobile Services', distance: '0.4 km', tier: 'Original', price: '₹4,200', warranty: '6 mo warranty', best: false },
+              { shop: 'City Care Repairs', distance: '1.1 km', tier: 'OEM', price: '₹3,450', warranty: '3 mo warranty', best: true },
+              { shop: 'Phone Fix Studio', distance: '2.3 km', tier: 'Compatible', price: '₹2,600', warranty: '1 mo warranty', best: false },
+            ].map((bid) => (
+              <div
+                class:list={[
+                  'flex items-center justify-between rounded-2xl border p-4',
+                  bid.best
+                    ? 'border-brand-400/60 bg-brand-500/10'
+                    : 'border-white/10 bg-white/[0.03]',
+                ]}
+              >
+                <div>
+                  <p class="text-sm font-semibold text-white">{bid.shop}</p>
+                  <p class="mt-0.5 text-xs text-ink-400">
+                    {bid.distance} away · {bid.tier} part · {bid.warranty}
+                  </p>
+                </div>
+                <p class="font-display text-lg font-extrabold text-brand-400">{bid.price}</p>
+              </div>
+            ))
+          }
+          <p class="pt-1 text-center text-xs text-ink-500">
+            Illustrative quotes — your actual bids arrive live from nearby technicians.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="mx-auto w-full max-w-6xl scroll-mt-20 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-600">Why DigiMyWay</p>
+      <h2 class="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+        Everything you need for a repair you can trust
+      </h2>
+      <p class="mt-4 text-lg text-ink-600">
+        One platform for discovery, pricing, booking, payment and warranty — so a broken device never
+        turns into a guessing game.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        features.map((feature) => (
+          <div class="rounded-2xl border border-ink-100 bg-white p-6 shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+              <Icon name={feature.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="mt-4 font-display text-lg font-bold">{feature.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{feature.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="scroll-mt-20 border-y border-ink-100 bg-ink-50">
+    <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-600">How it works</p>
+        <h2 class="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+          From broken to fixed in four steps
+        </h2>
+      </div>
+
+      <ol class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          steps.map((step) => (
+            <li class="relative rounded-2xl border border-ink-100 bg-white p-6">
+              <span class="font-display text-3xl font-extrabold text-brand-500/30">{step.step}</span>
+              <h3 class="mt-3 font-display text-lg font-bold">{step.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{step.body}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Benefits split -->
+  <section class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-600">Built for peace of mind</p>
+        <h2 class="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+          Transparent pricing, verified hands, protected payment
+        </h2>
+        <p class="mt-4 text-lg text-ink-600">
+          DigiMyWay removes the haggling, the hidden markups and the guesswork from device repair, so
+          you always know what you are paying for and who is doing the work.
+        </p>
+        <ul class="mt-6 flex flex-col gap-3">
+          {
+            benefits.map((benefit) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-verified-500/15 text-verified-600">
+                  <Icon name="check" class="h-3.5 w-3.5" />
+                </span>
+                <span class="text-sm text-ink-700">{benefit}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        {
+          stats.map((stat) => (
+            <div class="rounded-2xl border border-ink-100 bg-gradient-to-b from-white to-ink-50 p-6 shadow-[var(--shadow-soft)]">
+              <p class="font-display text-3xl font-extrabold text-ink-900">{stat.value}</p>
+              <p class="mt-1 text-sm text-ink-600">{stat.label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="scroll-mt-20 border-t border-ink-100 bg-ink-50">
+    <div class="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-600">FAQs</p>
+        <h2 class="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+          Frequently asked questions
+        </h2>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-3">
+        {
+          faqs.map((faq) => (
+            <details class="group rounded-2xl border border-ink-100 bg-white p-5 open:shadow-[var(--shadow-soft)]">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-bold text-ink-900 [&::-webkit-details-marker]:hidden">
+                {faq.q}
+                <span class="shrink-0 text-brand-500 transition-transform group-open:rotate-45">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-ink-600">{faq.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div class="hero-backdrop relative overflow-hidden rounded-3xl px-8 py-14 text-center sm:px-16">
+      <h2 class="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        Ready to fix your device the smart way?
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-ink-300">
+        Join {site.name} today and get live repair quotes from verified technicians near you — free to
+        use, pay only when the job is done.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-base font-semibold text-ink-950 transition-colors hover:bg-brand-400"
+        >
+          Contact us
+          <Icon name="arrow" class="h-5 w-5" />
+        </a>
+        <a
+          href={`mailto:${site.contact.email}`}
+          class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
+        >
+          {site.contact.email}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
